@@ -4,6 +4,10 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
+% To compile: lualatex (NOT luatex, luahbtex, latex)
+% So far, I've had most success by installing miktex and then
+% having it install lualatex.
+
 
 \documentclass[roman]{moderncv}
 \usepackage{fontspec}
@@ -13,7 +17,7 @@
 % \setmainfont{URW Gothic}
 
 % moderncv themes
-\moderncvtheme[burgundy]{casual}
+\moderncvtheme[green]{casual}
 
 % optional arguments are 'blue'
 % (default), 'orange', 'red', 'green',
@@ -21,11 +25,11 @@
 % {casual, classic, banking, oldstyle}
 
 % character encoding
-\usepackage[utf8]{inputenc}                  
+\usepackage[utf8]{inputenc}
 
 % adjust the page margins
 \usepackage[scale=0.8]{geometry}
-\recomputelengths                  
+\recomputelengths
 
 % Emphasize terms
 \renewcommand{\emph}[1] {\textbf{\textit{#1}}}
@@ -33,30 +37,39 @@
 % personal data
 \firstname{Liudvikas}
 \familyname{Akelis}
-\title{Curriculum Vitae}              
-\address{Vilnius, Lithuania}   
+\title{Curriculum Vitae}
+\address{Vilnius, Lithuania}
 \mobile{+37069053684}
-\email{liudvikas.akelis@gmail.com} 
+\email{liudvikas.akelis@gmail.com}
 \extrainfo{\url{https://github.com/liudvikasakelis}}
 
 % uncomment to suppress automatic page numbering for CVs longer than one page
-%\nopagenumbers{}           
+%\nopagenumbers{}
 
 
 \begin{document}
 \maketitle
 
 \section{About me}
-\cvitem{}{A chemist by training, I have been fascinated by computers from an early age. After becoming interested in statistics, I pivoted my career to data science in 2017. Since then, I have worked in all stages of data analysis, from determining data requirements all the way to creating decisions from that data. I enjoy working in teams, pushing into git, cycling and bouldering.}
+\cvitem{}{A chemist by training, I was fascinated by computers from an early age. After becoming interested in statistics, I pivoted my career to data science in 2017. Since then, I have worked in many data areas - from determining data requirements to data engineering to creating decisions from that data. I enjoy working in teams, pushing into git, cycling and bouldering.}
 
 \section{Work experience}
+
+\cventry{Apr 2024 - current}{Data Engineer}{NASDAQ, Vilnius}{}{}{
+  Maintain a small internal data warehouse for the Internal Audit team.
+  \begin{itemize}
+  \item Researched (benchmarked) and initiated a migration to Python. This involved both re-implementing some functions in Python and interoperating with functions whose migration was postponed.
+  \item Introduced unit testing. Especially during a migration, it's very useful to have assurance that data transformations are migrated faithfully.
+  \item Onboard new data sources, debug old ones.
+  \end{itemize}
+}
 
 \cventry{May 2020 - Nov 2023}{Decision Scientist}{Vinted, Vilnius}{}{}{
   Helped make decisions more data-based in full-stack development teams
   \begin{itemize}
-  \item Proposed, defined  and implemented various metrics for the team. OKRs at the top level, but also their decomposition into drivers. 
+  \item Proposed, defined  and implemented various metrics for the team. OKRs at the top level, but also their decomposition into drivers.
   \item Contributed to exposing our data to the rest of the company by developing data models, developing nightly jobs to calculcate them, and finally expose this data through \emph{Looker}.
-  \item Organized and overlooked AB experiments on both internal and customer-facing features: proposed and defined measures and how to measure them, calculated sample sizes before the experiments and result statistical significance after. 
+  \item Organized and overlooked AB experiments on both internal and customer-facing features: proposed and defined measures and how to measure them, calculated sample sizes before the experiments and result statistical significance after.
   \end{itemize}
 }
 
@@ -65,33 +78,31 @@
   the infrastructure better.
   \begin{itemize}
   \item Started with tasks in data extraction, such as imports from raw
-    sources, some light web scraping, and automating these ingests into our
-    databases.
-  \item Moved on to building predictive models for projects, working mostly with \emph{Tensorflow} and \emph{xgboost} - respectively convolutional neural networks and random forests. 
+    sources and web scraping.
+  \item Moved on to building predictive models for projects, working mostly with \emph{Tensorflow} and \emph{xgboost} - respectively convolutional neural networks and random forests.
   \item On the side, worked to revive and took on administrating one of our
-    older servers, in which I set up and started promoting our internal Wiki
-    page and Gitlab server.
+    older Linux servers.
   \item Developed a few internal webapps, using the amazing \emph{Shiny}
     framework, which we used to spread our data insights within the company.
   \end{itemize}
 }
 
 \cventry{2017-2018}{ETL/web scraping}{upwork.com, freelancing platform}{}{}{
-  Freelanced on the Upwork platform
+  Freelanced on the Upwork platform.
 }
 
 \cventry{Mar 2016 - Jan 2017}{Chemical analyst}{Smithers Rapra, Shrewsbury, UK
 }{}{}{
-  Prepped and carried out analyses of pharmaceutical polymers for leaching 
+  Prepped and carried out analyses of pharmaceutical polymers for leaching.
 }
 
+\newpage 
 
-\newpage
+
 \section{Technical skills}
-
 \cvitem{}{
   \begin{itemize}
-  \item For data analysis and modelling, I absolutely love \emph{R} with 5+ years of experience. I have worked with \emph{Python} for a similar amount of time, just not as recently.
+  \item For data analysis and modelling, I absolutely love \emph{R} with 5+ years of experience. Similar amount of \emph{Python}.
   \item 5+ years of SQL usage. For complex queries, I however prefer frameworks (\emph{ibis}, \emph{dbplyr})
   \item 3 years of \emph{Scala Spark}
   \item \emph{git}
@@ -99,7 +110,7 @@
     \begin{itemize}
     \item \emph{guile scheme} and \emph{Emacs Lisp}
     \item \emph{Linux} and \emph{bash}
-    \item \emph{C} 
+    \item \emph{C}
     \item Basic knowledge of how Web works (\emph{HTML}, vanilla \emph{JS}, \emph{CSS}).
     \item \emph{Docker} containers and other \emph{virtualization} stack.
     \end{itemize}
